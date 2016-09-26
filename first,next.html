@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取第一个元素和下一个兄弟</title>
+</head>
+<body>
+<div id="div">
+    
+	<h1 id="h1">hhhhhhhh</h1>
+	<!-- <p>pppppppppp</p> -->
+</div>
+<script>
+	var oDiv = document.getElementById("div");
+	var oH1 = document.getElementById("h1");
+	function next(Ele){
+      do{
+      	var Ele = Ele.nextSibling;
+       }while(Ele&&Ele.nodeType!=1)
+      return Ele;
+	}
+	// var o = next(oH1);
+	// console.log(o);
+	function first(elem){
+      var elem = elem.firstChild;
+      return elem && elem.nodeType==1 ?elem:next(elem);
+	}
+	 console.log(first(oDiv));
+</script>
+	
+	
+</body>
+</html>
