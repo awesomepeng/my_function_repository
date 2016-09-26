@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阻止浏览器的默认行为</title>
+</head>
+<body>
+	<script>
+		function stopDefault( e ) { 
+		    //阻止默认浏览器动作(W3C) 
+		    if ( e && e.preventDefault ) 
+		        e.preventDefault(); 
+		    //IE中阻止函数器默认动作的方式 
+		    else 
+		        window.event.returnValue = false; 
+		    return false; 
+		}
+		//对于阻止默认行为在a的href写javascript:;或者javascript:void(0);或者在事件方法后写return false;也可以。阻止页面自刷新。
+		//在body里写onselectstart=”return flase;”也可以阻止浏览器的默认行为。
+	</script>
+</body>
+</html>
